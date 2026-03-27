@@ -5,7 +5,10 @@ def gradient_descent_quadratic(a, b, c, x0, lr, steps):
     Return final x after 'steps' iterations.
     """
     # Write code here
+    multiplier = 1.0 - (2.0 * a * lr)
+    subtractor = lr * b
+    
     for _ in range(steps):
-        x0 = x0 - lr * (2*a*x0 + b)
+        x0 = (x0 * multiplier) - subtractor
 
-    return x0
+    return float(x0)
